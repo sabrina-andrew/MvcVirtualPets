@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcVirtualPets;
 
 namespace MvcVirtualPets.Migrations
 {
     [DbContext(typeof(PetContext))]
-    partial class PetContextModelSnapshot : ModelSnapshot
+    [Migration("20190301162720_ChangedPetModel")]
+    partial class ChangedPetModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +35,9 @@ namespace MvcVirtualPets.Migrations
                     b.ToTable("Pets");
 
                     b.HasData(
-                        new { Id = 1, Description = "Roscoe is a handsome boy", Name = "Roscoe" },
-                        new { Id = 2, Description = "Biggs is a big dog", Name = "Biggs" },
-                        new { Id = 3, Description = "Bella is a pretty girl", Name = "Bella" }
+                        new { Id = 1, Name = "Roscoe" },
+                        new { Id = 2, Name = "Biggs" },
+                        new { Id = 3, Name = "Bella" }
                     );
                 });
 #pragma warning restore 612, 618

@@ -25,9 +25,9 @@ namespace MvcVirtualPets
         {
             modelBuilder.Entity<Pet>().HasData(
 
-               new Pet() { Id = 1, Name = "Roscoe" },
-               new Pet() { Id = 2, Name = "Biggs" },
-               new Pet() { Id = 3, Name = "Bella" } 
+               new Pet() { Id = 1, Name = "Roscoe", Description = "Roscoe is a handsome boy" },
+               new Pet() { Id = 2, Name = "Biggs" , Description = "Biggs is a big dog"},
+               new Pet() { Id = 3, Name = "Bella" , Description = "Bella is a pretty girl"} 
                 );
             base.OnModelCreating(modelBuilder);
         }

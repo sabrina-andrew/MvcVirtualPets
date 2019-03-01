@@ -13,7 +13,7 @@ namespace MvcVirtualPets.Repositories
         {
             this.db = db;
         }
-        
+
         public IEnumerable<Pet> GetAll()
         {
             return db.Pets.ToList();
@@ -23,6 +23,24 @@ namespace MvcVirtualPets.Repositories
         {
             return db.Pets.Single(pet => pet.Id == id);
         }
+
+        public void Create(Pet pet)
+        {
+            db.Pets.Add(pet);
+            db.SaveChanges();
+        }
+
+        public void Delete(Pet pet)
+        {
+            db.Pets.Remove(pet);
+            db.SaveChanges();
+        }
+
+        public void Edit(Pet pet)
+        {
+            db.Pets.Update(pet);
+            db.SaveChanges();
+        }
+    }    
         
-    }
 }
