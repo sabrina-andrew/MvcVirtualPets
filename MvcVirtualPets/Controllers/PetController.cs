@@ -11,8 +11,8 @@ namespace MvcVirtualPets.Controllers
     public class PetController : Controller
     {
 
-        PetRepository petRepo;
-        public PetController(PetRepository petRepo)
+        IPetRepository petRepo;
+        public PetController(IPetRepository petRepo)
         {
             this.petRepo = petRepo;
         }

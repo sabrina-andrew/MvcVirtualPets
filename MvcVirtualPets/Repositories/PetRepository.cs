@@ -6,7 +6,7 @@ using MvcVirtualPets.Models;
 
 namespace MvcVirtualPets.Repositories
 {
-    public class PetRepository
+    public class PetRepository : IPetRepository
     {
         PetContext db;
         public PetRepository(PetContext db)
